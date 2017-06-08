@@ -1,0 +1,29 @@
+language: d
+
+d:
+  - dmd
+  - ldc
+os:
+  - linux
+  - osx
+
+jobs:
+  include:
+    - &deploy
+      stage: deploy
+      d: ldc
+      os: linux
+      script: ./build_release.sh
+      deploy:
+        provider: releases
+        api_key:
+          secure: 0mSQTxo+Vz6u1jHdFG3xJrJCtaLuCK7p+9kQG+TOAEQpxrvjX5XRNVqrDjUyvSWt2HNCQDrzdvb0cjEEnPNC1fT4f3H6oVwk2skddjLIc8bh1Bbhwfm2otc7WAjBrbsUZPOxVk0t84vPxO0Fa6gzpWc/5TLLsxmNce/4r3dcJcxtnCOYnYC/q3dFx7hr1UAIu0R+Ug6PYmbjSj6lVRScCSXKAiIZ/uO0tIGcLYPjCUBYt4uDax3aFZ5+fISyyGwpVogW5oPJffNKBdnBR8EayQMEXriqF3Rl8WW57T0S69afDqFG7YuQeG5EQYsxkgulgiSMehxt4gh+wfq5m/9KED1GmGIbX0/k6V07SwGIkLRRHGtjpS+ofzG8g0rmFlFdhD32rcuh1RQ0xPRNs6c1IJ2meAvPfGpR9JCP0jkmnvCymRGEYcaPRNAcqVFf61O3W3Ctwo/QND9ZM/Uar9Rj3sh/zT9OjkNGCcoWjtNqj+IDc/7HvOY1LII8qGTdc+KANJjO8qT3cdnlfT+zwn0jJ9vx81qB69M9n3biAyJBLNjdxSmRQMAZIJRSTenIc5CUposBCKuIafxr8Ze4Q7XcZ0zNq+Ax+ai1ktWfBV/zxrnoSgaSx7yg5wBtZD9F0TJSwXWGTQIsLWp1+S5wjbVdSXQM3Ib4b1GKOYaNzDzJUFI=
+        draft: true
+        tag_name: $TRAVIS_TAG
+        file_glob: true
+        file: remarkify*.tar.xz
+        skip_cleanup: true
+        on:
+          tags: true
+    - <<: *deploy
+      os: osx

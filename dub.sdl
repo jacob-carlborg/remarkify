@@ -5,3 +5,4 @@ copyright "Copyright © 2017, Jacob Carlborg"
 license "BSL-1.0"
 
 dflags "-static" platform="linux-ldc"
+lflags "-macosx_version_min" "10.7" "-lcrt1.o" platform="osx"

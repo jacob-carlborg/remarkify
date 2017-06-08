@@ -6,5 +6,6 @@ __dummy.html
 *.exe
 *.html
 *.txt
+*.xz
 __test__*__
 remarkify
