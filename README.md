@@ -14,6 +14,14 @@ A plain text file containing the ordering of the slides is necessary. The file
 should contain the basename (without the directory path) of the Markdown files,
 one file per line.
 
+## Download
+
+For the latest release see: [releases/latest](https://github.com/jacob-carlborg/remarkify/releases/latest).
+
+Pre-compiled binares are available for macOS and Linux for 64bit. The Linux
+binaries are completely statically linked and should work on any distribution
+or version.
+
 ## Usage
 
 Specify the Markdown files to combine as arguments, the HTML template to use
