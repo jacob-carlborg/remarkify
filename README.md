@@ -18,9 +18,9 @@ one file per line.
 
 For the latest release see: [releases/latest](https://github.com/jacob-carlborg/remarkify/releases/latest).
 
-Pre-compiled binares are available for macOS and Linux for 64bit. The Linux
-binaries are completely statically linked and should work on any distribution
-or version.
+Pre-compiled binares are available for macOS (10.7 and later) and Linux for
+64bit. The Linux binaries are completely statically linked and should work on
+any distribution or version.
 
 ## Usage
 
